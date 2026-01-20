@@ -11,30 +11,40 @@
 #include <stdio.h>
 
 int main(){
-    
+    int soDien;
+    double tienDien = 0;
     // Khai báo biến
-float soDien, tienDien;
 
-    // Nhập dữ liệu
+
+    // Nhập số điện tiêu thụ 
     printf("Nhap so dien tieu thu: ");
     scanf("%f", &soDien);     
     printf("So dien tieu thu: %.2f kWh\n", soDien); 
     scanf("%f", &soDien);  
 
-    // Xử lý, tính toán VÀ Hiển thị kết quả
     if (soDien <= 50)
     {
-        tienDien = soDien * 1000;
+        tienDien = soDien * 1678;
     }
     else if (soDien <= 100)
     {
-        tienDien = 50 * 1000 + (soDien - 50) * 1200;
+        tienDien = 50 * 1678 + (soDien - 50) * 1734;
     }
-    else
+    else if (soDien <= 200)
     {
-        tienDien = 50 * 1000 + 50 * 1200 + (soDien - 100) * 1500;
+        tienDien = 50 * 1678 
+        + 50 * 1734 
+        + 100 * 2014;
     }
-
-    printf("So tien dien phai tra: %.2f VND\n", tienDien);
+    else 
+    {
+        tienDien = 50 * 1678 
+        + 50 * 1734
+        + 100 * 2014
+        + (soDien - 200) * 2536;
+    }
+    
+    //Hiển thị tiền điện
+    printf("So tien dien phai dong: %.0lf VND\n", tienDien);
     return 0;   
 }
